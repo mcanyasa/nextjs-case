@@ -1,11 +1,47 @@
+import { useState, useEffect } from 'react'
+import {productItem} from '../data'
 import Layout from "./layout";
 import Carousel from 'react-bootstrap/Carousel';
 import * as Icon from 'react-bootstrap-icons';
 
 import styles from './card.module.css'
 
-export default function Card({children}){
-    return <div className={styles.container}>
+export const getStaticProps = async ()=> {
+  return {
+    props: {
+      products : productItem
+    }
+  }
+}
+
+
+
+ function Card({products}){
+
+  const [data, setData] = useState([])
+  const [isLoading, setLoading] = useState(false)
+
+  useEffect(() => {
+    console.log("productItem",productItem)
+    setData(productItem)
+    /* setLoading(true)
+      fetch(process.env.API_URL)
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+        setLoading(false)
+      }) */
+  }, [])
+
+  /* if (isLoading) return <p>Loading...</p>
+  if (!data) return <p>No profile data</p> */
+
+    return ( 
+      <>
+      
+    {data.map((item) => (
+    <div key={item.id} className={styles.container}>
+
     <Layout>
 
     <Carousel>
@@ -33,9 +69,9 @@ export default function Card({children}){
     </Carousel>
 
     <div className="content mx-3">
-      <h3 className={styles.productTitle}>Galaxy Note 20 Lite 64GB Siyah</h3>
-      <button type="button" className="tag btn btn-secondary mx-1">SIFIR AYARINDA</button>
-      <button type="button" className="tagName btn btn-dark"><Icon.ShieldCheck className="mx-1"/>Garantili</button>
+      <h3 className={styles.productTitle}>{item.itemName}</h3>
+      <button type="button" className="tag btn btn-secondary mx-1">{item.tag[0].tagName}</button>
+      <button type="button" className="tagName btn btn-dark"><Icon.ShieldCheck className="mx-1"/>{item.tag[1].tagName}</button>
       <p className="mt-3">İlk günden beri kılıfında özenle kullandım. Sıra sende!</p>
       <button
         type="button"
@@ -110,4 +146,20 @@ export default function Card({children}){
     </div>
         </Layout>
     </div>
+     ))}
+     </>
+    )
    }
+
+
+/*    export async function getStaticProps(context) {
+    // fetch the blog posts from the mock API
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const posts = await res.json();
+  
+    return {
+      props: { posts } // props will be passed to the page
+    };
+  } */
+
+   export default Card;
