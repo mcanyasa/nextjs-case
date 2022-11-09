@@ -1,0 +1,35 @@
+
+body,html{
+    background-color: #fff;
+    font-size: 13px;
+}
+
+a{
+    color: #000;
+}
+
+.container{
+    max-width: 750px;
+}
+
+.content{
+    flex-direction: column;
+}
+
+.carousel-inner{
+    border-radius: 10px !important;
+}
+
+.carousel-indicators [data-bs-target]{
+    border-top:0;
+    border-bottom:0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

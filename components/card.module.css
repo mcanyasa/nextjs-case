@@ -1,0 +1,72 @@
+.productTitle{
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.container{
+    width: 50%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.seller{
+    width: 50%;
+}
+
+.prize{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.discountPrizeArea{
+    background-color: #eee;
+    color: #000;
+    font-size: 15px;
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.discountPrize{
+    background-color: #eee;
+    color: #000;
+    font-weight: bold;
+    font-size: 17px;
+    text-decoration: line-through;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.shareAndLikeIconsArea{
+   display: flex;
+}
+.shareIcon,.likeIcon{
+    font-size: 15px;
+    display: flex;
+    background-color: #eee;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    margin-right: 10px !important;
+}
+
+.shareAndLike{
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+}
+
+.cargo,.installment,.moneySafety{
+    margin-bottom: 10px;
+}
