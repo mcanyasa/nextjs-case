@@ -17,7 +17,7 @@ a{
 }
 
 .carousel-inner{
-    border-radius: 10px !important;
+    border-radius: 0.365rem !important;
 }
 
 .carousel-indicators [data-bs-target]{
@@ -26,6 +26,10 @@ a{
     width: 10px;
     height: 10px;
     border-radius: 50px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before{
+    content:var(--bs-breadcrumb-divider, ">") /* rtl: var(--bs-breadcrumb-divider, ">") */  
 }
 
 .flex{
